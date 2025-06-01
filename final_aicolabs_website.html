@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI CollLabs | Bridging AI Innovation for Everyone</title>
+    <meta name="description" content="Elhem Guernina voorkomt big tech dominantie door traditionele bedrijven te verbinden met AI-wizards. 30 jaar ervaring, persoonlijke benadering.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-teal: #0d3b3b;
+            --secondary-teal: #1a5555;
+            --medium-teal: #2d6a6a;
+            --accent-gold: #f4b942;
+            --accent-gold-dark: #e6a635;
+            --dark-teal: #0a2e2e;
+            --forest-green: #1a4a4a;
+            --text-dark: #1a202c;
+            --text-light: #4a5568;
+            --bg-light: #f7fafc;
+            --white: #ffffff;
+            --gradient-teal: linear-gradient(135deg, #0d3b3b 0%, #1a5555 50%, #2d6a6a 100%);
+            --gradient-gold: linear-gradient(135deg, #f4b942 0%, #e6a635 100%);
+            --glow-gold: 0 0 30px rgba(244, 185, 66, 0.4);
+            --glow-teal: 0 0 30px rgba(13, 59, 59, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-teal);
+            letter-spacing: 0.1em;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-main {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        .logo-subtitle {
+            font-size: 0.65rem;
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            color: var(--primary-teal);
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Premium Access Button in Nav */
+        .premium-access-btn {
+            background: var(--gradient-gold);
+            color: var(--primary-teal);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .premium-access-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(244, 185, 66, 0.3);
+            color: var(--primary-teal);
+        }
+
+        /* Public Website Content */
+        .public-content {
+            display: block;
+        }
+
+        /* Premium Portal - Hidden by default */
+        .premium-portal {
+            display: none;
+            min-height: 100vh;
+            background: var(--gradient-teal);
+            color: var(--white);
+            padding-top: 80px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-teal);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(244,185,66,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-left {
+            text-align: left;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            font-weight: 300;
+            color: var(--accent-gold);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 4rem;
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+
+        .personal-intro {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .personal-intro p {
+            font-size: 1.1rem;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* Hexagon FULL PAGE - Central Theme */
+        .hexagon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            height: 600px;
+            margin: 2rem auto;
+        }
+
+        .hexagon {
+            width: 280px;
+            height: 280px;
+            position: absolute;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .hexagon:hover {
+            transform: scale(1.15);
+            z-index: 10;
+        }
+
+        /* Perfect Triangle Formation - Bigger Spread */
+        .hexagon:nth-child(1) {
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .hexagon:nth-child(2) {
+            bottom: 0px;
+            left: 80px;
+        }
+
+        .hexagon:nth-child(3) {
+            bottom: 0px;
+            right: 80px;
+        }
+
+        .hexagon-shape {
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-gold);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            box-shadow: var(--glow-gold);
+            transition: all 0.4s ease;
+        }
+
+        .hexagon:hover .hexagon-shape {
+            background: var(--gradient-teal);
+            box-shadow: var(--glow-teal);
+        }
+
+        /* Custom Hexagon Icons - Bigger */
+        .hexagon-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 0.75rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hexagon-icon.scan::before {
+            content: "";
+            width: 55px;
+            height: 55px;
+            border: 4px solid var(--white);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .hexagon-icon.scan::after {
+            content: "";
+            width: 20px;
+            height: 4px;
+            background: var(--white);
+            position: absolute;
+            transform: rotate(45deg);
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .hexagon-icon.connect::before {
+            content: "";
+            width: 70px;
+            height: 70px;
+            background: conic-gradient(from 0deg, var(--white) 0%, transparent 25%, var(--white) 50%, transparent 75%, var(--white) 100%);
+            border-radius: 50%;
+            animation: spin 3s linear infinite;
+        }
+
+        .hexagon-icon.collaborate::before {
+            content: "";
+            width: 70px;
+            height: 70px;
+            border: 4px solid var(--white);
+            border-radius: 12px;
+            position: relative;
+            background: linear-gradient(45deg, transparent 40%, var(--white) 50%, transparent 60%);
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hexagon-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            line-height: 1.3;
+            text-align: center;
+            padding: 0 8px;
+        }
+
+        /* Closing the AI Gap Theme */
+        .ai-gap-theme {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .ai-gap-theme h3 {
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .ai-gap-theme p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-teal);
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 4rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(244, 185, 66, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(244, 185, 66, 0.15);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary-teal);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .service-card-icon {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .service-card-icon.scan::before {
+            content: "";
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--primary-teal);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .service-card-icon.scan::after {
+            content: "";
+            width: 12px;
+            height: 2px;
+            background: var(--primary-teal);
+            position: absolute;
+            transform: rotate(45deg);
+            bottom: 8px;
+            right: 8px;
+        }
+
+        .service-card-icon.connect::before {
+            content: "";
+            width: 40px;
+            height: 40px;
+            background: conic-gradient(from 0deg, var(--primary-teal) 0%, transparent 25%, var(--primary-teal) 50%, transparent 75%, var(--primary-teal) 100%);
+            border-radius: 50%;
+            animation: spin 4s linear infinite;
+        }
+
+        .service-card-icon.collaborate::before {
+            content: "";
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--primary-teal);
+            border-radius: 6px;
+            position: relative;
+            background: linear-gradient(45deg, transparent 40%, var(--primary-teal) 50%, transparent 60%);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 0.8rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+
+        .service-features li::before {
+            content: '→';
+            color: var(--accent-gold);
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        /* About/Timeline Section */
+        .about-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 3rem auto 0;
+            padding: 0 20px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gradient-gold);
+            transform: translateX(-50%);
+            box-shadow: 0 0 20px rgba(244, 185, 66, 0.3);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 60px 0;
+            width: 100%;
+        }
+
+        .year-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-gold);
+            color: var(--white);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(244, 185, 66, 0.4);
+            border: 6px solid var(--white);
+            z-index: 10;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(13, 59, 59, 0.1);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(13, 59, 59, 0.15);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border: 15px solid transparent;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -30px;
+            border-left-color: var(--white);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 55%;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -30px;
+            border-right-color: var(--white);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-teal);
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content .company {
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content .achievements {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .timeline-content .achievements li {
+            padding: 0.3rem 0;
+            color: var(--text-dark);
+            font-weight: 500;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline-content .achievements li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+        }
+
+        /* Modules Section */
+        .modules-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .module-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--secondary-teal);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(13, 59, 59, 0.1);
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-gold);
+        }
+
+        .module-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(244, 185, 66, 0.15);
+        }
+
+        .module-number {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .module-card h3 {
+            color: var(--primary-teal);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .module-card p {
+            color: var(--secondary-teal);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .module-highlights {
+            list-style: none;
+        }
+
+        .module-highlights li {
+            color: var(--text-light);
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .module-highlights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--gradient-gold);
+            text-align: center;
+            color: var(--white);
+        }
+
+        .contact-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .contact-section p {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            font-weight: 600;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--white);
+        }
+
+        .contact-btn {
+            background: var(--secondary-teal);
+            color: var(--white);
+            border: 3px solid var(--secondary-teal);
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 10px 10px 0;
+        }
+
+        .contact-btn:hover {
+            background: var(--white);
+            color: var(--secondary-teal);
+            border-color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(26, 85, 85, 0.3);
+        }
+
+        /* Premium Access Gate */
+        .access-gate {
+            min-height: 100vh;
+            background: var(--gradient-teal);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 20px;
+        }
+
+        .access-gate::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(244,185,66,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .access-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .access-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+            text-shadow: 0 0 20px rgba(244, 185, 66, 0.3);
+        }
+
+        .access-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .access-form-container {
+            background: rgba(13, 59, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--accent-gold);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .lock-icon {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+
+        .access-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--secondary-teal);
+            border-radius: 8px;
+            background: rgba(13, 59, 59, 0.8);
+            color: var(--white);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(244, 185, 66, 0.1);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .access-btn {
+            background: var(--gradient-gold);
+            color: var(--primary-teal);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .access-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(244, 185, 66, 0.3);
+        }
+
+        .nda-notice {
+            background: rgba(244, 185, 66, 0.1);
+            border: 1px solid var(--accent-gold);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .nda-notice h4 {
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        .error {
+            color: #ef4444;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Premium Portal Content */
+        .premium-welcome {
+            text-align: center;
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(244, 185, 66, 0.3);
+        }
+
+        .premium-welcome h1 {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .premium-welcome p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .premium-modules {
+            padding: 80px 0;
+            background: rgba(13, 59, 59, 0.5);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--secondary-teal);
+            color: var(--secondary-teal);
+            background: var(--bg-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hexagon-container {
+                width: 100%;
+                max-width: 600px;
+                height: 450px;
+                margin: 1rem auto;
+            }
+            
+            .hexagon {
+                width: 200px;
+                height: 200px;
+            }
+
+            .hexagon:nth-child(1) {
+                top: 0px;
+            }
+
+            .hexagon:nth-child(2) {
+                bottom: 0px;
+                left: 50px;
+            }
+
+            .hexagon:nth-child(3) {
+                bottom: 0px;
+                right: 50px;
+            }
+
+            .hexagon-title {
+                font-size: 0.9rem;
+            }
+
+            .hexagon-icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px;
+            }
+
+            .year-marker {
+                left: 20px;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 60px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div class="logo-text">
+                    <div class="logo-main">AI CollLabs</div>
+                    <div class="logo-subtitle">BRIDGING AI FOR EVERYONE</div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a onclick="scrollToSection('home')">Home</a></li>
+                <li><a onclick="scrollToSection('diensten')">Diensten</a></li>
+                <li><a onclick="scrollToSection('over')">Over</a></li>
+                <li><a onclick="scrollToSection('modules')">Modules</a></li>
+                <li><a onclick="scrollToSection('contact')">Contact</a></li>
+                <li><a class="premium-access-btn" onclick="showPremiumAccess()">⬢ Toegang</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- PUBLIC WEBSITE CONTENT -->
+    <div class="public-content" id="publicContent">
+        <!-- Hero Section / Home -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-main">
+                        <div class="hero-left">
+                            <h1 class="hero-title">AIColLabs</h1>
+                            <div class="hero-tagline">Samen Innoveren, Samen Transformeren</div>
+                            
+                            <div class="ai-gap-theme">
+                                <h3>Closing the AI Gap</h3>
+                                <p>Voor ieder business model. Van traditionele bedrijven naar AI-gedreven groei. Samen overbruggen we de kloof tussen waar je bent en waar je wilt zijn.</p>
+                            </div>
+
+                            <div class="hexagon-container">
+                                <div class="hexagon" onclick="scrollToSection('diensten')">
+                                    <div class="hexagon-shape">
+                                        <div class="hexagon-icon scan"></div>
+                                        <div class="hexagon-title">AI Opportunity Scan</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="hexagon" onclick="scrollToSection('diensten')">
+                                    <div class="hexagon-shape">
+                                        <div class="hexagon-icon connect"></div>
+                                        <div class="hexagon-title">Partnership Matching</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="hexagon" onclick="scrollToSection('diensten')">
+                                    <div class="hexagon-shape">
+                                        <div class="hexagon-icon collaborate"></div>
+                                        <div class="hexagon-title">Implementation Success</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="personal-intro">
+                                <p>"30 jaar business DNA - van IKEA tot AI-innovatie. Ik zie jouw kansen waar anderen problemen zien."</p>
+                            </div>
+                            
+                            <p class="hero-subtitle">Jouw brug tussen traditioneel zakendoen en AI-innovatie. Met 30 jaar ervaring in retail, telecom, zorg, finance en tech zie ik jullie kansen voor meer omzet en kosten besparing waar anderen alleen problemen zien. Wij voorkomen big tech dominantie door gevestigde bedrijven te verbinden met opkomende AI-wizards.</p>
+                        </div>
+                        
+                        <div class="hero-right">
+                            <!-- Content moved to left side -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diensten Section -->
+        <section class="services-section" id="diensten">
+            <div class="container">
+                <h2 class="section-title">Onze Drie-Brug Strategie</h2>
+                <p class="section-subtitle">Drie concrete stappen om van AI-angst naar AI-voordeel te gaan</p>
+                
+                <div class="services-grid">
+                    <div class="service-card" id="ai-scan">
+                        <h3>
+                            <div class="service-card-icon scan"></div>
+                            AI Opportunity Scan
+                        </h3>
+                        <p>Ik analyseer jouw organisatie met mijn 30 jaar ervaring. Waar zitten de echte kansen? Welke processen vreten tijd en geld? Samen maken we een roadmap die werkt.</p>
+                        <ul class="service-features">
+                            <li>Technologie audit met sector-expertise</li>
+                            <li>Proces optimalisatie analyse</li>
+                            <li>AI kansen mapping - meer omzet, lagere kosten</li>
+                            <li>Risico beoordeling - geen AI-experimenten</li>
+                            <li>Aangepaste transformatie roadmap</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card" id="ai-connect">
+                        <h3>
+                            <div class="service-card-icon connect"></div>
+                            Partnership Matching
+                        </h3>
+                        <p>Ik verbind je met AI-specialisten die ik persoonlijk ken en vertrouw. Geen cowboys, maar echte experts die jouw industrie begrijpen en resultaat leveren.</p>
+                        <ul class="service-features">
+                            <li>Gekureerd netwerk - door mij gescreend</li>
+                            <li>Sector-specifieke matching</li>
+                            <li>Cultuur en waarden fit</li>
+                            <li>Win-win partnership facilitatie</li>
+                            <li>Doorlopende relatie ondersteuning</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card" id="ai-collaborate">
+                        <h3>
+                            <div class="service-card-icon collaborate"></div>
+                            Implementation Success
+                        </h3>
+                        <p>Ik blijf erbij tijdens de implementatie. Als bruggenbouwer zorg ik ervoor dat jouw team en de AI-wizard elkaar verstaan en samen succesvol zijn.</p>
+                        <ul class="service-features">
+                            <li>Gezamenlijk projectmanagement</li>
+                            <li>Kennisoverdracht protocollen</li>
+                            <li>Implementatie toezicht</li>
+                            <li>Succes metrics tracking</li>
+                            <li>Lange-termijn partnership groei</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Over/Timeline Section -->
+        <section class="about-section" id="over">
+            <div class="container">
+                <h2 class="section-title">30 Jaar in Jouw Schoenen</h2>
+                <p class="section-subtitle">Van IKEA tot AI-innovatie - Ik zie jullie kansen waar anderen alleen problemen zien</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="year-marker">1995</div>
+                        <div class="timeline-content">
+                            <h3>Retail Foundation</h3>
+                            <span class="company">IKEA Nederland</span>
+                            <p>Begonnen met inventory optimalisatie en customer flow analyse. Hier leerde ik het belang van data-driven decisions in retail operations.</p>
+                            <ul class="achievements">
+                                <li>Omzet per m² optimalisatie</li>
+                                <li>Supply chain efficiency programma's</li>
+                                <li>Customer journey mapping</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year-marker">2000</div>
+                        <div class="timeline-content">
+                            <h3>Fashion Retail</h3>
+                            <span class="company">Mango</span>
+                            <p>Seizoen forecasting en markdown reductie strategieën. Eerste ervaring met predictive analytics in fashion retail.</p>
+                            <ul class="achievements">
+                                <li>Seizoensvoorspelling algoritmes</li>
+                                <li>Markdown optimalisatie -25%</li>
+                                <li>Trend analysis frameworks</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year-marker">2005</div>
+                        <div class="timeline-content">
+                            <h3>Telecom Transformation</h3>
+                            <span class="company">Ziggo/Vodafone</span>
+                            <p>Customer acquisition cost optimalisatie en churn prevention tijdens de grote telecom consolidatie. Ervaring met big data analytics.</p>
+                            <ul class="achievements">
+                                <li>Customer acquisition cost -40%</li>
+                                <li>Churn prediction modellen</li>
+                                <li>4G network rollout strategy</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year-marker">2010</div>
+                        <div class="timeline-content">
+                            <h3>Healthcare Innovation</h3>
+                            <span class="company">HagaZiekenhuis</span>
+                            <p>Post-fusie harmonisatie en digitalisering van healthcare processen. Compliance met IGJ regelgeving en efficiency optimization.</p>
+                            <ul class="achievements">
+                                <li>Administratiekosten -30%</li>
+                                <li>Patient flow efficiency +25%</li>
+                                <li>IGJ compliance automation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year-marker">2015</div>
+                        <div class="timeline-content">
+                            <h3>Financial Services</h3>
+                            <span class="company">Nederlandse Vereniging van Banken</span>
+                            <p>Diversity & Inclusion programma ontwikkeling en risicomanagement optimalisatie. Regulatory compliance automation.</p>
+                            <ul class="achievements">
+                                <li>D&I strategie implementatie</li>
+                                <li>Risk assessment automation</li>
+                                <li>Regulatory reporting efficiency</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year-marker">2020</div>
+                        <div class="timeline-content">
+                            <h3>AI & Tech Innovation</h3>
+                            <span class="company">Multiple Tech Companies</span>
+                            <p>Transitie naar AI en machine learning projecten. Van Annexum's predictive maintenance tot BouWatch's production optimization.</p>
+                            <ul class="achievements">
+                                <li>Azure ML implementaties</li>
+                                <li>Predictive maintenance systemen</li>
+                                <li>AI-driven process automation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modules Section -->
+        <section class="modules-section" id="modules">
+            <div class="container">
+                <h2 class="section-title">AI Transformation Modules</h2>
+                <p class="section-subtitle">Bewezen methodologieën voor elke fase van jouw AI-journey</p>
+                
+                <div class="modules-grid">
+                    <div class="module-card">
+                        <div class="module-number">Module 1</div>
+                        <h3>AI Readiness Assessment</h3>
+                        <p>Complete analyse van jouw organisatie's AI-gereedheid en transformatiepotentieel.</p>
+                        <ul class="module-highlights">
+                            <li>Technology infrastructure audit</li>
+                            <li>Data maturity assessment</li>
+                            <li>Organizational change readiness</li>
+                            <li>ROI opportunity mapping</li>
+                            <li>Risk & compliance evaluation</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-number">Module 2</div>
+                        <h3>Strategic AI Roadmap</h3>
+                        <p>Stap-voor-stap implementatieplan aangepast aan jouw specifieke business model en doelen.</p>
+                        <ul class="module-highlights">
+                            <li>Prioritized use case identification</li>
+                            <li>Timeline & milestone planning</li>
+                            <li>Resource allocation strategy</li>
+                            <li>Budget & investment planning</li>
+                            <li>Success metrics definition</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-number">Module 3</div>
+                        <h3>Partner Matching & Selection</h3>
+                        <p>Verbinding met de juiste AI-specialisten die jouw industrie en uitdagingen begrijpen.</p>
+                        <ul class="module-highlights">
+                            <li>Sector-specific expert matching</li>
+                            <li>Technical capability assessment</li>
+                            <li>Cultural fit evaluation</li>
+                            <li>Reference & track record review</li>
+                            <li>Contract & SLA negotiation</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-number">Module 4</div>
+                        <h3>Implementation Management</h3>
+                        <p>Hands-on projectmanagement en continue monitoring tijdens de AI-implementatie fase.</p>
+                        <ul class="module-highlights">
+                            <li>Agile project management</li>
+                            <li>Quality assurance protocols</li>
+                            <li>Risk mitigation strategies</li>
+                            <li>Stakeholder communication</li>
+                            <li>Change management support</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-number">Module 5</div>
+                        <h3>Performance Optimization</h3>
+                        <p>Continue verbetering en optimalisatie van AI-systemen voor maximale business impact.</p>
+                        <ul class="module-highlights">
+                            <li>Performance monitoring dashboards</li>
+                            <li>Model accuracy optimization</li>
+                            <li>Cost efficiency analysis</li>
+                            <li>Scaling & expansion planning</li>
+                            <li>ROI measurement & reporting</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-number">Module 6</div>
+                        <h3>Long-term AI Strategy</h3>
+                        <p>Strategische planning voor toekomstige AI-innovaties en concurrentievoordeel behoud.</p>
+                        <ul class="module-highlights">
+                            <li>Technology trend analysis</li>
+                            <li>Competitive advantage strategies</li>
+                            <li>Innovation pipeline development</li>
+                            <li>Team capability building</li>
+                            <li>Partnership ecosystem growth</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <h2>Klaar om Jouw AI-Toekomst te Bepalen?</h2>
+                <p>Laat big tech niet jouw AI-bestemming bepalen. Start vandaag met een persoonlijk gesprek over jouw AI-mogelijkheden.</p>
+                
+                <div style="margin-top: 40px;">
+                    <a href="mailto:info@aicolllabs.nl?subject=AI Transformatie Gesprek" class="contact-btn">▶ Start Gesprek</a>
+                    <a href="tel:+31612345678" class="contact-btn">▲ Bel Direct</a>
+                    <a href="https://linkedin.com/in/elhemguernina" target="_blank" class="contact-btn">◆ LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PREMIUM PORTAL - Hidden by default -->
+    <div class="premium-portal" id="premiumPortal">
+        <!-- Access Gate -->
+        <section class="access-gate" id="accessGate">
+            <div class="container">
+                <div class="access-content">
+                    <h1 class="access-title">Strategic Business Intelligence</h1>
+                    <p class="access-subtitle">Propriëtaire Methodologieën voor Concurrentievoordeel</p>
+                    <p style="opacity: 0.8; margin-bottom: 2rem;">Exclusieve Toegang · Vertrouwelijke Inzichten · Strategische Transformatie</p>
+                    
+                    <div class="access-form-container">
+                        <div class="lock-icon">⬢</div>
+                        <h2>Toegang tot Vertrouwelijke Business Intelligence</h2>
+                        <p style="margin: 20px 0; opacity: 0.9;">Deze methodologieën zijn ontwikkeld door 30 jaar ervaring met Fortune 500 bedrijven en bevatten gevoelige strategische inzichten.</p>
+                        
+                        <form class="access-form" id="accessForm">
+                            <div class="form-group">
+                                <label for="name">Volledige Naam</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Bedrijfsnaam</label>
+                                <input type="text" id="company" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Adres</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="accessCode">Toegangscode</label>
+                                <input type="password" id="accessCode" placeholder="Ontvangen tijdens intake gesprek" required>
+                            </div>
+                            <button type="submit" class="access-btn">Toegang Aanvragen</button>
+                            <div class="error" id="error">Ongeldige toegangscode. Neem contact op voor een intake gesprek.</div>
+                        </form>
+
+                        <div class="nda-notice">
+                            <h4>⚖ Vertrouwelijkheidsverklaring Vereist</h4>
+                            <p>Toegang tot deze methodologieën vereist ondertekening van een NDA vanwege de strategische waarde en concurrentiegevoeligheid van de inzichten.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Content - Hidden until access granted -->
+        <div class="premium-content" id="premiumContent" style="display: none;">
+            <section class="premium-welcome">
+                <div class="container">
+                    <h1>Welkom in het Strategic Business Intelligence Portal</h1>
+                    <p>Toegang verleend tot propriëtaire methodologieën, frameworks en implementatie-tools die uw bedrijf transformeren naar data-driven strategic excellence.</p>
+                </div>
+            </section>
+
+            <section class="premium-modules">
+                <div class="container">
+                    <h2 class="section-title" style="color: var(--accent-gold);">Strategic Business Intelligence Modules</h2>
+                    
+                    <div class="modules-grid">
+                        <div class="module-card" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(244, 185, 66, 0.3);">
+                            <div class="module-number">Premium Module 1</div>
+                            <h3 style="color: var(--white);">Competitive Intelligence Framework</h3>
+                            <p style="color: rgba(255, 255, 255, 0.8);">Geavanceerde technieken voor het analyseren van concurrenten, marktposities en strategische kansen.</p>
+                            <ul class="module-highlights">
+                                <li>Propriëtaire SWOT+ analysemodel</li>
+                                <li>Competitor benchmarking dashboard</li>
+                                <li>Market gap identification tools</li>
+                                <li>Strategic positioning matrix</li>
+                                <li>Competitive threat assessment</li>
+                            </ul>
+                        </div>
+                        <!-- More premium modules would be added here -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 AI CollLabs | Alle methodologieën zijn eigendom en vallen onder geheimhoudingsverklaringen</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functions
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Show premium access portal
+        function showPremiumAccess() {
+            document.getElementById('publicContent').style.display = 'none';
+            document.getElementById('premiumPortal').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // Premium access functionality
+        const validCodes = ['STRATEGIC2025', 'MKBINTEL', 'BIZADVISE', 'AICOLLLABS'];
+        let accessGranted = false;
+
+        document.getElementById('accessForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value;
+            const email = document.getElementById('email').value;
+            const code = document.getElementById('accessCode').value.toUpperCase();
+            
+            if (validCodes.includes(code)) {
+                // Store access info
+                const accessInfo = {
+                    name: name,
+                    company: company,
+                    email: email,
+                    timestamp: new Date().toISOString()
+                };
+                
+                // Grant access
+                document.getElementById('accessGate').style.display = 'none';
+                document.getElementById('premiumContent').style.display = 'block';
+                accessGranted = true;
+                
+                console.log('Access granted to:', accessInfo);
+                
+            } else {
+                document.getElementById('error').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('error').style.display = 'none';
+                }, 5000);
+            }
+        });
+
+        // Smooth scrolling for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to hexagons
+        window.addEventListener('scroll', () => {
+            const hexagons = document.querySelectorAll('.hexagon');
+            const scrollPosition = window.scrollY;
+            
+            hexagons.forEach((hexagon, index) => {
+                const rotation = scrollPosition * 0.02 * (index + 1);
+                hexagon.style.transform += ` rotate(${rotation}deg)`;
+            });
+        });
+
+        // Back to public site function
+        function backToPublicSite() {
+            document.getElementById('premiumPortal').style.display = 'none';
+            document.getElementById('publicContent').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
+                
