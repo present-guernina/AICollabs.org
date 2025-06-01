@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Business Intelligence Advisor | AI CollLabs</title>
+    <meta name="description" content="Exclusieve toegang tot propriëtaire business intelligence methodologieën. Van AI consultant naar Strategic Business Intelligence Advisor met 30 jaar ervaring.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-teal: #0d3b3b;
+            --secondary-teal: #1a5555;
+            --medium-teal: #2d6a6a;
+            --accent-gold: #f4b942;
+            --accent-gold-dark: #e6a635;
+            --dark-teal: #0a2e2e;
+            --forest-green: #1a4a4a;
+            --text-dark: #1a202c;
+            --text-light: #4a5568;
+            --bg-light: #f7fafc;
+            --white: #ffffff;
+            --gradient-teal: linear-gradient(135deg, #0d3b3b 0%, #1a5555 50%, #2d6a6a 100%);
+            --gradient-gold: linear-gradient(135deg, #f4b942 0%, #e6a635 100%);
+            --glow-gold: 0 0 30px rgba(244, 185, 66, 0.4);
+            --glow-teal: 0 0 30px rgba(13, 59, 59, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-teal);
+            letter-spacing: 0.1em;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-main {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        .logo-subtitle {
+            font-size: 0.65rem;
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            color: var(--primary-teal);
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Access Gate */
+        .access-gate {
+            min-height: 100vh;
+            background: var(--gradient-teal);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .access-gate::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(244,185,66,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .access-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .access-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+            text-shadow: 0 0 20px rgba(244, 185, 66, 0.3);
+        }
+
+        .access-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .access-form-container {
+            background: rgba(13, 59, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--accent-gold);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .lock-icon {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+
+        .access-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--secondary-teal);
+            border-radius: 8px;
+            background: rgba(13, 59, 59, 0.8);
+            color: var(--white);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(244, 185, 66, 0.1);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .access-btn {
+            background: var(--gradient-gold);
+            color: var(--primary-teal);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .access-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(244, 185, 66, 0.3);
+        }
+
+        .nda-notice {
+            background: rgba(244, 185, 66, 0.1);
+            border: 1px solid var(--accent-gold);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .nda-notice h4 {
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        .error {
+            color: #ef4444;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Main Content - Hidden Initially */
+        .main-content {
+            display: none;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-teal);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(244,185,66,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-left {
+            text-align: left;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+            text-shadow: 0 0 20px rgba(244, 185, 66, 0.3);
+            line-height: 1.1;
+        }
+
+        .hero-tagline {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            font-weight: 300;
+            color: var(--accent-gold);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .personal-intro {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .personal-intro p {
+            font-size: 1.1rem;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* Hexagon Circle Formation */
+        .hexagon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            height: 400px;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .hexagon {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .hexagon:hover {
+            transform: scale(1.15);
+        }
+
+        .hexagon:nth-child(1) {
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .hexagon:nth-child(2) {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .hexagon:nth-child(3) {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .hexagon-shape {
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-gold);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            box-shadow: var(--glow-gold);
+            transition: all 0.4s ease;
+        }
+
+        .hexagon:hover .hexagon-shape {
+            background: var(--gradient-teal);
+            box-shadow: var(--glow-teal);
+        }
+
+        .hexagon-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hexagon-icon.scan::before {
+            content: "";
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--white);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .hexagon-icon.scan::after {
+            content: "";
+            width: 15px;
+            height: 3px;
+            background: var(--white);
+            position: absolute;
+            transform: rotate(45deg);
+            bottom: 8px;
+            right: 8px;
+        }
+
+        .hexagon-icon.connect::before {
+            content: "";
+            width: 50px;
+            height: 50px;
+            background: conic-gradient(from 0deg, var(--white) 0%, transparent 25%, var(--white) 50%, transparent 75%, var(--white) 100%);
+            border-radius: 50%;
+            animation: spin 3s linear infinite;
+        }
+
+        .hexagon-icon.collaborate::before {
+            content: "";
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--white);
+            border-radius: 8px;
+            position: relative;
+            background: linear-gradient(45deg, transparent 40%, var(--white) 50%, transparent 60%);
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hexagon-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            line-height: 1.2;
+        }
+
+        /* Value Proposition */
+        .proposition {
+            background: var(--bg-light);
+            padding: 80px 0;
+        }
+
+        .proposition h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--primary-teal);
+            font-weight: 800;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--secondary-teal);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(13, 59, 59, 0.1);
+        }
+
+        .value-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(244, 185, 66, 0.15);
+        }
+
+        .value-card h3 {
+            color: var(--accent-gold);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .value-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .results-showcase {
+            text-align: center;
+            margin-top: 60px;
+            background: var(--gradient-teal);
+            padding: 40px;
+            border-radius: 20px;
+            color: var(--white);
+        }
+
+        .results-showcase h3 {
+            color: var(--accent-gold);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .results-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .result-item {
+            text-align: center;
+        }
+
+        .result-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent-gold);
+            display: block;
+            text-shadow: 0 0 20px rgba(244, 185, 66, 0.4);
+        }
+
+        .result-label {
+            color: var(--white);
+            font-weight: 600;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-teal);
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 4rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(244, 185, 66, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(244, 185, 66, 0.15);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary-teal);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .service-card-icon {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .service-card-icon.scan::before {
+            content: "";
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--primary-teal);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .service-card-icon.scan::after {
+            content: "";
+            width: 12px;
+            height: 2px;
+            background: var(--primary-teal);
+            position: absolute;
+            transform: rotate(45deg);
+            bottom: 8px;
+            right: 8px;
+        }
+
+        .service-card-icon.connect::before {
+            content: "";
+            width: 40px;
+            height: 40px;
+            background: conic-gradient(from 0deg, var(--primary-teal) 0%, transparent 25%, var(--primary-teal) 50%, transparent 75%, var(--primary-teal) 100%);
+            border-radius: 50%;
+            animation: spin 4s linear infinite;
+        }
+
+        .service-card-icon.collaborate::before {
+            content: "";
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--primary-teal);
+            border-radius: 6px;
+            position: relative;
+            background: linear-gradient(45deg, transparent 40%, var(--primary-teal) 50%, transparent 60%);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 0.8rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+
+        .service-features li::before {
+            content: '→';
+            color: var(--accent-gold);
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        /* Modules Section */
+        .modules-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .module-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--secondary-teal);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(13, 59, 59, 0.1);
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-gold);
+        }
+
+        .module-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(244, 185, 66, 0.15);
+        }
+
+        .module-number {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .module-card h3 {
+            color: var(--primary-teal);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .module-card p {
+            color: var(--secondary-teal);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .module-highlights {
+            list-style: none;
+        }
+
+        .module-highlights li {
+            color: var(--text-light);
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .module-highlights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .sector-experience {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--accent-gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sector-experience::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(244, 185, 66, 0.1) 0%, transparent 70%);
+            border-radius: 0 20px 0 100px;
+        }
+
+        .sector-experience:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(244, 185, 66, 0.15);
+            border-left-color: var(--primary-teal);
+        }
+
+        .sector-experience h4 {
+            font-size: 1.3rem;
+            color: var(--primary-teal);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sector-experience p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .sector-experience strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient-gold);
+            padding: 80px 0;
+            text-align: center;
+            color: var(--primary-teal);
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .cta-btn-large {
+            background: var(--primary-teal);
+            color: var(--accent-gold);
+            border: 2px solid var(--primary-teal);
+            padding: 20px 40px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-btn-large:hover {
+            background: transparent;
+            color: var(--primary-teal);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(13, 59, 59, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--secondary-teal);
+            margin-top: 60px;
+            color: var(--secondary-teal);
+            background: var(--bg-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .access-title, .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hexagon-container {
+                width: 350px;
+                height: 320px;
+            }
+            
+            .hexagon {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .results-grid {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div class="logo-text">
+                    <div class="logo-main">AI CollLabs</div>
+                    <div class="logo-subtitle">Strategic Business Intelligence</div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#access">Toegang</a></li>
+                <li><a href="#services">Diensten</a></li>
+                <li><a href="#modules">Modules</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Access Gate -->
+    <section class="access-gate" id="accessGate">
+        <div class="container">
+            <div class="access-content">
+                <h1 class="access-title">Strategic Business Intelligence</h1>
+                <p class="access-subtitle">Propriëtaire Methodologieën voor Concurrentievoordeel</p>
+                <p style="opacity: 0.8; margin-bottom: 2rem;">Exclusieve Toegang · Vertrouwelijke Inzichten · Strategische Transformatie</p>
+                
+                <div class="access-form-container">
+                    <div class="lock-icon">🔐</div>
+                    <h2>Toegang tot Vertrouwelijke Business Intelligence</h2>
+                    <p style="margin: 20px 0; opacity: 0.9;">Deze methodologieën zijn ontwikkeld door 30 jaar ervaring met Fortune 500 bedrijven en bevatten gevoelige strategische inzichten.</p>
+                    
+                    <form class="access-form" id="accessForm">
+                        <div class="form-group">
+                            <label for="name">Volledige Naam</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Bedrijfsnaam</label>
+                            <input type="text" id="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Adres</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="accessCode">Toegangscode</label>
+                            <input type="password" id="accessCode" placeholder="Ontvangen tijdens intake gesprek" required>
+                        </div>
+                        <button type="submit" class="access-btn">Toegang Aanvragen</button>
+                        <div class="error" id="error">Ongeldige toegangscode. Neem contact op voor een intake gesprek.</div>
+                    </form>
+
+                    <div class="nda-notice">
+                        <h4>⚖️ Vertrouwelijkheidsverklaring Vereist</h4>
+                        <p>Toegang tot deze methodologieën vereist ondertekening van een NDA vanwege de strategische waarde en concurrentiegevoeligheid van de inzichten.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content - Hidden until access granted -->
+    <div class="main-content" id="mainContent">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-main">
+                        <div class="hero-left">
+                            <h1 class="hero-title">Strategic Business Intelligence Advisor</h1>
+                            <p class="hero-tagline">Van AI Consultant naar Strategic Expert</p>
+                            
+                            <div class="personal-intro">
+                                <p>"30 jaar business DNA - van IKEA tot AI-innovatie. Ik zie jouw kansen waar anderen problemen zien."</p>
+                            </div>
+                            
+                            <p class="hero-subtitle">Toegang verleend tot propriëtaire methodologieën die traditionele consulting transformeren naar data-driven strategic advisory met 3-5x hogere waardering. Geen consultancy theater - échte transformatie die werkt.</p>
+                        </div>
+                        
+                        <div class="hero-right">
+                            <div class="hexagon-container">
+                                <div class="hexagon" onclick="scrollToSection('ai-scan')">
+                                    <div class="hexagon-shape">
+                                        <div class="hexagon-icon scan"></div>
+                                        <div class="hexagon-title">AI Opportunity Scan</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="hexagon" onclick="scrollToSection('ai-connect')">
+                                    <div class="hexagon-shape">
+                                        <div class="hexagon-icon connect"></div>
+                                        <div class="hexagon-title">Partnership Matching</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="hexagon" onclick="scrollToSection('ai-collaborate')">
+                                    <div class="hexagon-shape">
+                                        <div class="hexagon-icon collaborate"></div>
+                                        <div class="hexagon-title">Implementation Success</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Proposition -->
+        <section class="proposition">
+            <div class="container">
+                <h2>Waarom MKB Bedrijven Kiezen voor Strategic Business Intelligence</h2>
+                
+                <div class="value-grid">
+                    <div class="value-card">
+                        <h3>🎯 Data-Driven Besluitvorming</h3>
+                        <p>Transformeer intuïtieve beslissingen naar bewezen strategieën gebaseerd op concrete business intelligence en marktanalyse.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>📈 Concurrentievoordeel</h3>
+                        <p>Ontdek verborgen kansen in uw markt door geavanceerde concurrentieanalyse en strategische positionering.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>💰 ROI Optimalisatie</h3>
+                        <p>Identificeer de hoogst renderende investeringen en elimineer verspilling door precisie business intelligence.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>🚀 Schaalbare Groei</h3>
+                        <p>Bouw systematische groeistrategie gebaseerd op voorspellende analyses en marktintelligentie.</p>
+                    </div>
+                </div>
+
+                <div class="results-showcase">
+                    <h3>Gemiddelde Resultaten Binnen 90 Dagen</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="result-number">+34%</span>
+                            <div class="result-label">Revenue Growth</div>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">+67%</span>
+                            <div class="result-label">Operational Efficiency</div>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">-23%</span>
+                            <div class="result-label">Cost Reduction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <h2 class="section-title">Onze Drie-Brug Strategie</h2>
+                <p class="section-subtitle">Drie concrete stappen om van AI-angst naar AI-voordeel te gaan</p>
+                
+                <div class="services-grid">
+                    <div class="service-card" id="ai-scan">
+                        <h3>
+                            <div class="service-card-icon scan"></div>
+                            AI Scan
+                        </h3>
+                        <p>Ik analyseer jouw organisatie met mijn 30 jaar ervaring. Waar zitten de echte kansen? Welke processen vreten tijd en geld? Samen maken we een roadmap die werkt.</p>
+                        <ul class="service-features">
+                            <li>Technologie audit met sector-expertise</li>
+                            <li>Proces optimalisatie analyse</li>
+                            <li>AI kansen mapping - meer omzet, lagere kosten</li>
+                            <li>Risico beoordeling - geen AI-experimenten</li>
+                            <li>Aangepaste transformatie roadmap</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card" id="ai-connect">
+                        <h3>
+                            <div class="service-card-icon connect"></div>
+                            AI Wizard Verbinding
+                        </h3>
+                        <p>Ik verbind je met AI-specialisten die ik persoonlijk ken en vertrouw. Geen cowboys, maar echte experts die jouw industrie begrijpen en resultaat leveren.</p>
+                        <ul class="service-features">
+                            <li>Gekureerd netwerk - door mij gescreend</li>
+                            <li>Sector-specifieke matching</li>
+                            <li>Cultuur en waarden fit</li>
+                            <li>Win-win partnership facilitatie</li>
+                            <li>Doorlopende relatie ondersteuning</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card" id="ai-collaborate">
+                        <h3>
+                            <div class="service-card-icon collaborate"></div>
+                            AI Samenwerking
+                        </h3>
+                        <p>Ik blijf erbij tijdens de implementatie. Als bruggenbouwer zorg ik ervoor dat jouw team en de AI-wizard elkaar verstaan en samen succesvol zijn.</p>
+                        <ul class="service-features">
+                            <li>Gezamenlijk projectmanagement</li>
+                            <li>Kennisoverdracht protocollen</li>
+                            <li>Implementatie toezicht</li>
+                            <li>Succes metrics tracking</li>
+                            <li>Lange-termijn partnership groei</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modules Section -->
+        <section class="modules-section" id="modules">
+            <div class="container">
+                <h2 class="section-title">Strategic Business Intelligence Methodologieën</h2>
+                <p class="section-subtitle">Zes propriëtaire modules voor complete business transformatie</p>
+                
+                <div class="modules-grid">
+                    <div class="module-card">
+                        <div class="module-number">Module 1</div>
+                        <h3>Competitive Intelligence Framework</h3>
+                        <p>Geavanceerde technieken voor het analyseren van concurrenten, marktposities en strategische kansen.</p>
+                        <ul class="module-highlights">
+                            <li>Propriëtaire SWOT+ analysemodel</li>
+                            <li>Competitor benchmarking dashboard</li>
+                            <li>Market gap identification tools</li>
+                            <li>Strategic positioning matrix</li>
+                            <li>Competitive threat assessment</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-number">Module 2</div>
+                        <h3>Revenue Optimization Analytics</h3>
+                        <p>Data-driven strategieën voor het maximaliseren van omzet door klantgedrag analyse en pricing intelligence.</p>
+                        <ul class="module-highlights">
+                            <li>Customer lifetime value modelling</li>
+                            <li>Dynamic pricing algorithms</li>
+                            <li>Revenue stream diversification</li>
+                            <li>Churn prediction & prevention</li>
+                            <li>Upselling opportunity mapping</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-number">Module 3</div>
+                        <h3>Operational Excellence Intelligence</h3>
+                        <p>Systematische benadering voor het identificeren en elimineren van inefficiënties in bedrijfsprocessen.</p>
+                        <ul class="module-highlights">
+                            <li>Process automation readiness assessment</li>
+                            <li>Cost-benefit optimization matrix</li>
+                            <li>Resource allocation intelligence</li>
+                            <li>Performance KPI frameworks</li>
+                            <li>Bottleneck identification system</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-number">Module 4</div>
+                        <h3>Market Expansion Strategy</h3>
+                        <p>Bewezen methodologieën voor het identificeren en succesvol betreden van nieuwe markten en segmenten.</p>
+                        <ul class="module-highlights">
+                            <li>Market opportunity scoring model</li>
+                            <li>Go-to-market strategy templates</li>
+                            <li>Risk assessment frameworks</li>
+                            <li>Investment prioritization matrix</li>
+                            <li>Timeline & milestone planning</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-number">Module 5</div>
+                        <h3>Predictive Business Analytics</h3>
+                        <p>Voorspellende modellen en trend analyses voor strategische planning en risicomanagement.</p>
+                        <ul class="module-highlights">
+                            <li>Demand forecasting algorithms</li>
+                            <li>Market trend prediction models</li>
+                            <li>Financial scenario planning</li>
+                            <li>Risk probability matrices</li>
+                            <li>Strategic decision trees</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-number">Module 6</div>
+                        <h3>Digital Transformation Intelligence</h3>
+                        <p>Strategische roadmap voor het succesvol implementeren van digitale transformatie initiatieven.</p>
+                        <ul class="module-highlights">
+                            <li>Digital readiness assessment</li>
+                            <li>Technology ROI calculators</li>
+                            <li>Change management frameworks</li>
+                            <li>Implementation risk mitigation</li>
+                            <li>Performance monitoring systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience-section">
+            <div class="container">
+                <h2 class="section-title">30 Jaar in Jouw Schoenen</h2>
+                <p class="section-subtitle">Ik zie jullie kansen voor meer omzet en lagere kosten waar anderen alleen problemen zien</p>
+                
+                <div class="experience-grid">
+                    <div class="sector-experience">
+                        <h4>🛍️ Retail & E-commerce</h4>
+                        <p><strong>IKEA (4 jaar)</strong> - Inventory optimalisatie, omzet per m²<br>
+                        <strong>Mango (1 jaar)</strong> - Seizoen forecasting, markdowns reductie<br>
+                        <strong>Franchise & papa-mama winkels</strong> - Cash flow, personeelskosten</p>
+                    </div>
+                    
+                    <div class="sector-experience">
+                        <h4>📱 Telecom & Technology</h4>
+                        <p><strong>Ziggo/Vodafone</strong> - Customer acquisition cost, churn reductie<br>
+                        <strong>Colourbox/Skyfish</strong> - SaaS metrics, retention verhogen<br>
+                        <strong>B2B & B2C</strong> - Sales cycle verkorten, conversion verhogen</p>
+                    </div>
+                    
+                    <div class="sector-experience">
+                        <h4>🏥 Zorg & Publieke Sector</h4>
+                        <p><strong>HagaZiekenhuis</strong> - Administratiekosten -30%, efficiency +25%<br>
+                        <strong>Gemeente Ede</strong> - Proceskosten reductie, service verbetering<br>
+                        <strong>Compliance & regelgeving</strong> - Boetes voorkomen, audit kosten</p>
+                    </div>
+                    
+                    <div class="sector-experience">
+                        <h4>💰 Finance & Banking</h4>
+                        <p><strong>Nederlandse Vereniging van Banken</strong> - Risk reduction, compliance<br>
+                        <strong>Robin Energie</strong> - Operational excellence, customer lifetime value<br>
+                        <strong>Compliance & risicomanagement</strong> - Penalty prevention</p>
+                    </div>
+                    
+                    <div class="sector-experience">
+                        <h4>🏭 Vastgoed & Energie</h4>
+                        <p><strong>Annexum Vastgoed</strong> - Predictive maintenance, asset performance<br>
+                        <strong>Robin Energie</strong> - Smart meter ROI, operational costs<br>
+                        <strong>Data-driven asset management</strong> - Revenue optimization</p>
+                    </div>
+                    
+                    <div class="sector-experience">
+                        <h4>⚙️ Manufacturing & Productie</h4>
+                        <p><strong>BouWatch EU</strong> - Production efficiency, quality costs<br>
+                        <strong>Supply chain digitalisering</strong> - Waste reduction<br>
+                        <strong>SAP S/4HANA, Outsystems</strong> - Process automation ROI</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" id="contact">
+            <div class="container">
+                <h2>Klaar voor Strategic Business Intelligence?</h2>
+                <p>Start met een vertrouwelijke strategische assessment van uw bedrijf</p>
+                <a href="mailto:info@aicolllabs.nl?subject=Strategic Assessment Aanvraag" class="cta-btn-large">Plan Intake Gesprek</a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 AI CollLabs Strategic Business Intelligence | Alle methodologieën zijn eigendom en vallen onder geheimhoudingsverklaringen</p>
+        </div>
+    </footer>
+
+    <script>
+        // Access control functionality
+        const validCodes = ['STRATEGIC2025', 'MKBINTEL', 'BIZADVISE', 'AICOLLLABS'];
+        let accessGranted = false;
+
+        document.getElementById('accessForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value;
+            const email = document.getElementById('email').value;
+            const code = document.getElementById('accessCode').value.toUpperCase();
+            
+            if (validCodes.includes(code)) {
+                // Store access info
+                const accessInfo = {
+                    name: name,
+                    company: company,
+                    email: email,
+                    timestamp: new Date().toISOString()
+                };
+                
+                // Grant access
+                document.getElementById('accessGate').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'block';
+                accessGranted = true;
+                
+                // Scroll to content
+                document.getElementById('mainContent').scrollIntoView({ behavior: 'smooth' });
+                
+                console.log('Access granted to:', accessInfo);
+                
+            } else {
+                document.getElementById('error').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('error').style.display = 'none';
+                }, 5000);
+            }
+        });
+
+        // Prevent direct access to content
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!accessGranted) {
+                document.getElementById('mainContent').style.display = 'none';
+            }
+        });
+
+        // Basic security - prevent inspect element bypass
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                if (!accessGranted) {
+                    e.preventDefault();
+                    alert('Toegang tot deze content is beveiligd. Gebruik de toegangscode om door te gaan.');
+                }
+            }
+        });
+
+        // Hexagon click functionality
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to hexagons
+        window.addEventListener('scroll', () => {
+            const hexagons = document.querySelectorAll('.hexagon');
+            const scrollPosition = window.scrollY;
+            
+            hexagons.forEach((hexagon, index) => {
+                const rotation = scrollPosition * 0.05 * (index + 1);
+                const scale = 1 + Math.sin(scrollPosition * 0.001 + index) * 0.05;
+                hexagon.style.transform = `rotate(${rotation}deg) scale(${scale})`;
+            });
+        });
+    </script>
+</body>
+</html>
