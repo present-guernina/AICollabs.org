@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategic Business Intelligence Advisor | AI CollLabs</title>
-    <meta name="description" content="Exclusieve toegang tot propriëtaire business intelligence methodologieën. Van AI consultant naar Strategic Business Intelligence Advisor met 30 jaar ervaring.">
+    <title>AI CollLabs | Bridging AI Innovation for Everyone</title>
+    <meta name="description" content="Elhem Guernina voorkomt big tech dominantie door traditionele bedrijven te verbinden met AI-wizards. 30 jaar ervaring, persoonlijke benadering.">
     
     <style>
         * {
@@ -103,161 +103,43 @@
             color: var(--text-dark);
             font-weight: 600;
             transition: color 0.3s;
+            cursor: pointer;
         }
 
         .nav-links a:hover {
             color: var(--accent-gold);
         }
 
-        /* Access Gate */
-        .access-gate {
+        /* Premium Access Button in Nav */
+        .premium-access-btn {
+            background: var(--gradient-gold);
+            color: var(--primary-teal);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .premium-access-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(244, 185, 66, 0.3);
+            color: var(--primary-teal);
+        }
+
+        /* Public Website Content */
+        .public-content {
+            display: block;
+        }
+
+        /* Premium Portal - Hidden by default */
+        .premium-portal {
+            display: none;
             min-height: 100vh;
             background: var(--gradient-teal);
             color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
             padding-top: 80px;
-        }
-
-        .access-gate::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(244,185,66,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-        }
-
-        .access-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .access-title {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: var(--accent-gold);
-            text-shadow: 0 0 20px rgba(244, 185, 66, 0.3);
-        }
-
-        .access-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-
-        .access-form-container {
-            background: rgba(13, 59, 59, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--accent-gold);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 40px 0;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .lock-icon {
-            font-size: 3rem;
-            color: var(--accent-gold);
-            margin-bottom: 20px;
-        }
-
-        .access-form {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--white);
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid var(--secondary-teal);
-            border-radius: 8px;
-            background: rgba(13, 59, 59, 0.8);
-            color: var(--white);
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--accent-gold);
-            box-shadow: 0 0 0 3px rgba(244, 185, 66, 0.1);
-        }
-
-        .form-group input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .access-btn {
-            background: var(--gradient-gold);
-            color: var(--primary-teal);
-            border: none;
-            padding: 15px 30px;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-
-        .access-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(244, 185, 66, 0.3);
-        }
-
-        .nda-notice {
-            background: rgba(244, 185, 66, 0.1);
-            border: 1px solid var(--accent-gold);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .nda-notice h4 {
-            color: var(--accent-gold);
-            margin-bottom: 10px;
-        }
-
-        .error {
-            color: #ef4444;
-            text-align: center;
-            margin-top: 10px;
-            display: none;
-        }
-
-        /* Main Content - Hidden Initially */
-        .main-content {
-            display: none;
-            animation: fadeIn 0.8s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Hero Section */
@@ -269,7 +151,6 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            padding-top: 80px;
         }
 
         .hero::before {
@@ -302,16 +183,15 @@
         }
 
         .hero-title {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            color: var(--accent-gold);
-            text-shadow: 0 0 20px rgba(244, 185, 66, 0.3);
+            letter-spacing: -0.02em;
             line-height: 1.1;
         }
 
         .hero-tagline {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
             opacity: 0.9;
             font-weight: 300;
@@ -319,9 +199,9 @@
         }
 
         .hero-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            opacity: 0.9;
+            font-size: 1.3rem;
+            margin-bottom: 4rem;
+            opacity: 0.8;
             line-height: 1.7;
         }
 
@@ -339,21 +219,21 @@
             font-style: italic;
         }
 
-        /* Hexagon Circle Formation */
+        /* Hexagon FULL PAGE - Central Theme */
         .hexagon-container {
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
             width: 100%;
-            height: 400px;
-            max-width: 450px;
-            margin: 0 auto;
+            max-width: 900px;
+            height: 600px;
+            margin: 2rem auto;
         }
 
         .hexagon {
-            width: 200px;
-            height: 200px;
+            width: 280px;
+            height: 280px;
             position: absolute;
             cursor: pointer;
             transition: all 0.4s ease;
@@ -361,22 +241,24 @@
 
         .hexagon:hover {
             transform: scale(1.15);
+            z-index: 10;
         }
 
+        /* Perfect Triangle Formation - Bigger Spread */
         .hexagon:nth-child(1) {
-            top: 20px;
+            top: 0px;
             left: 50%;
             transform: translateX(-50%);
         }
 
         .hexagon:nth-child(2) {
-            bottom: 20px;
-            left: 20px;
+            bottom: 0px;
+            left: 80px;
         }
 
         .hexagon:nth-child(3) {
-            bottom: 20px;
-            right: 20px;
+            bottom: 0px;
+            right: 80px;
         }
 
         .hexagon-shape {
@@ -398,10 +280,11 @@
             box-shadow: var(--glow-teal);
         }
 
+        /* Custom Hexagon Icons - Bigger */
         .hexagon-icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 0.5rem;
+            width: 80px;
+            height: 80px;
+            margin-bottom: 0.75rem;
             position: relative;
             display: flex;
             align-items: center;
@@ -410,28 +293,28 @@
 
         .hexagon-icon.scan::before {
             content: "";
-            width: 40px;
-            height: 40px;
-            border: 3px solid var(--white);
+            width: 55px;
+            height: 55px;
+            border: 4px solid var(--white);
             border-radius: 50%;
             position: relative;
         }
 
         .hexagon-icon.scan::after {
             content: "";
-            width: 15px;
-            height: 3px;
+            width: 20px;
+            height: 4px;
             background: var(--white);
             position: absolute;
             transform: rotate(45deg);
-            bottom: 8px;
-            right: 8px;
+            bottom: 10px;
+            right: 10px;
         }
 
         .hexagon-icon.connect::before {
             content: "";
-            width: 50px;
-            height: 50px;
+            width: 70px;
+            height: 70px;
             background: conic-gradient(from 0deg, var(--white) 0%, transparent 25%, var(--white) 50%, transparent 75%, var(--white) 100%);
             border-radius: 50%;
             animation: spin 3s linear infinite;
@@ -439,10 +322,10 @@
 
         .hexagon-icon.collaborate::before {
             content: "";
-            width: 50px;
-            height: 50px;
-            border: 3px solid var(--white);
-            border-radius: 8px;
+            width: 70px;
+            height: 70px;
+            border: 4px solid var(--white);
+            border-radius: 12px;
             position: relative;
             background: linear-gradient(45deg, transparent 40%, var(--white) 50%, transparent 60%);
         }
@@ -453,109 +336,47 @@
         }
 
         .hexagon-title {
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--white);
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            line-height: 1.2;
-        }
-
-        /* Value Proposition */
-        .proposition {
-            background: var(--bg-light);
-            padding: 80px 0;
-        }
-
-        .proposition h2 {
+            line-height: 1.3;
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--primary-teal);
-            font-weight: 800;
+            padding: 0 8px;
         }
 
-        .value-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .value-card {
-            background: var(--white);
-            padding: 30px;
+        /* Closing the AI Gap Theme */
+        .ai-gap-theme {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
-            border: 1px solid var(--secondary-teal);
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(13, 59, 59, 0.1);
+            backdrop-filter: blur(10px);
         }
 
-        .value-card:hover {
-            border-color: var(--accent-gold);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(244, 185, 66, 0.15);
-        }
-
-        .value-card h3 {
-            color: var(--accent-gold);
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .value-card p {
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        .results-showcase {
-            text-align: center;
-            margin-top: 60px;
-            background: var(--gradient-teal);
-            padding: 40px;
-            border-radius: 20px;
-            color: var(--white);
-        }
-
-        .results-showcase h3 {
-            color: var(--accent-gold);
-            margin-bottom: 30px;
+        .ai-gap-theme h3 {
             font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .results-grid {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        .result-item {
-            text-align: center;
-        }
-
-        .result-number {
-            font-size: 3rem;
-            font-weight: 900;
             color: var(--accent-gold);
-            display: block;
-            text-shadow: 0 0 20px rgba(244, 185, 66, 0.4);
+            margin-bottom: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
-        .result-label {
-            color: var(--white);
-            font-weight: 600;
-            margin-top: 10px;
+        .ai-gap-theme p {
+            font-size: 1.2rem;
             opacity: 0.9;
+            line-height: 1.6;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         /* Services Section */
         .services-section {
             padding: 100px 0;
-            background: var(--white);
+            background: var(--bg-light);
         }
 
         .section-title {
@@ -687,6 +508,145 @@
             flex-shrink: 0;
         }
 
+        /* About/Timeline Section */
+        .about-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 3rem auto 0;
+            padding: 0 20px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gradient-gold);
+            transform: translateX(-50%);
+            box-shadow: 0 0 20px rgba(244, 185, 66, 0.3);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 60px 0;
+            width: 100%;
+        }
+
+        .year-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-gold);
+            color: var(--white);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(244, 185, 66, 0.4);
+            border: 6px solid var(--white);
+            z-index: 10;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(13, 59, 59, 0.1);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(13, 59, 59, 0.15);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border: 15px solid transparent;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -30px;
+            border-left-color: var(--white);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 55%;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -30px;
+            border-right-color: var(--white);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-teal);
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content .company {
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content .achievements {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .timeline-content .achievements li {
+            padding: 0.3rem 0;
+            color: var(--text-dark);
+            font-weight: 500;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline-content .achievements li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+        }
+
         /* Modules Section */
         .modules-section {
             padding: 100px 0;
@@ -765,107 +725,218 @@
             font-weight: bold;
         }
 
-        /* Experience Section */
-        .experience-section {
+        /* Contact Section */
+        .contact-section {
             padding: 100px 0;
-            background: var(--white);
-        }
-
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .sector-experience {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border-left: 5px solid var(--accent-gold);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sector-experience::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, rgba(244, 185, 66, 0.1) 0%, transparent 70%);
-            border-radius: 0 20px 0 100px;
-        }
-
-        .sector-experience:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 60px rgba(244, 185, 66, 0.15);
-            border-left-color: var(--primary-teal);
-        }
-
-        .sector-experience h4 {
-            font-size: 1.3rem;
-            color: var(--primary-teal);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .sector-experience p {
-            color: var(--text-light);
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-
-        .sector-experience strong {
-            color: var(--text-dark);
-            font-weight: 600;
-        }
-
-        /* CTA Section */
-        .cta-section {
             background: var(--gradient-gold);
-            padding: 80px 0;
             text-align: center;
-            color: var(--primary-teal);
+            color: var(--white);
         }
 
-        .cta-section h2 {
-            font-size: 2.5rem;
+        .contact-section h2 {
+            font-size: 2.8rem;
             margin-bottom: 20px;
             font-weight: 800;
+            color: var(--white);
         }
 
-        .cta-section p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
+        .contact-section p {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
             font-weight: 600;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--white);
         }
 
-        .cta-btn-large {
-            background: var(--primary-teal);
-            color: var(--accent-gold);
-            border: 2px solid var(--primary-teal);
+        .contact-btn {
+            background: var(--secondary-teal);
+            color: var(--white);
+            border: 3px solid var(--secondary-teal);
             padding: 20px 40px;
-            border-radius: 10px;
-            font-size: 1.2rem;
+            border-radius: 50px;
+            font-size: 1.3rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            margin: 0 10px 10px 0;
         }
 
-        .cta-btn-large:hover {
-            background: transparent;
-            color: var(--primary-teal);
+        .contact-btn:hover {
+            background: var(--white);
+            color: var(--secondary-teal);
+            border-color: var(--white);
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(13, 59, 59, 0.2);
+            box-shadow: 0 15px 30px rgba(26, 85, 85, 0.3);
+        }
+
+        /* Premium Access Gate */
+        .access-gate {
+            min-height: 100vh;
+            background: var(--gradient-teal);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 20px;
+        }
+
+        .access-gate::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(244,185,66,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .access-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .access-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+            text-shadow: 0 0 20px rgba(244, 185, 66, 0.3);
+        }
+
+        .access-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .access-form-container {
+            background: rgba(13, 59, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--accent-gold);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .lock-icon {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+
+        .access-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--secondary-teal);
+            border-radius: 8px;
+            background: rgba(13, 59, 59, 0.8);
+            color: var(--white);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(244, 185, 66, 0.1);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .access-btn {
+            background: var(--gradient-gold);
+            color: var(--primary-teal);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .access-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(244, 185, 66, 0.3);
+        }
+
+        .nda-notice {
+            background: rgba(244, 185, 66, 0.1);
+            border: 1px solid var(--accent-gold);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .nda-notice h4 {
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        .error {
+            color: #ef4444;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Premium Portal Content */
+        .premium-welcome {
+            text-align: center;
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(244, 185, 66, 0.3);
+        }
+
+        .premium-welcome h1 {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .premium-welcome p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .premium-modules {
+            padding: 80px 0;
+            background: rgba(13, 59, 59, 0.5);
         }
 
         /* Footer */
@@ -873,14 +944,13 @@
             text-align: center;
             padding: 40px 0;
             border-top: 1px solid var(--secondary-teal);
-            margin-top: 60px;
             color: var(--secondary-teal);
             background: var(--bg-light);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .access-title, .hero-title {
+            .hero-title {
                 font-size: 2.5rem;
             }
             
@@ -890,38 +960,68 @@
             }
             
             .hexagon-container {
-                width: 350px;
-                height: 320px;
+                width: 100%;
+                max-width: 600px;
+                height: 450px;
+                margin: 1rem auto;
             }
             
             .hexagon {
-                width: 140px;
-                height: 140px;
-            }
-            
-            .modules-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .value-grid {
-                grid-template-columns: 1fr;
+                width: 200px;
+                height: 200px;
             }
 
-            .results-grid {
-                flex-direction: column;
-                gap: 20px;
+            .hexagon:nth-child(1) {
+                top: 0px;
+            }
+
+            .hexagon:nth-child(2) {
+                bottom: 0px;
+                left: 50px;
+            }
+
+            .hexagon:nth-child(3) {
+                bottom: 0px;
+                right: 50px;
+            }
+
+            .hexagon-title {
+                font-size: 0.9rem;
+            }
+
+            .hexagon-icon {
+                width: 60px;
+                height: 60px;
             }
             
             .nav-links {
                 display: none;
             }
-
+            
             .services-grid {
                 grid-template-columns: 1fr;
             }
 
-            .experience-grid {
+            .modules-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px;
+            }
+
+            .year-marker {
+                left: 20px;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 60px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -932,154 +1032,76 @@
             <div class="logo">
                 <div class="logo-text">
                     <div class="logo-main">AI CollLabs</div>
-                    <div class="logo-subtitle">Strategic Business Intelligence</div>
+                    <div class="logo-subtitle">BRIDGING AI FOR EVERYONE</div>
                 </div>
             </div>
             <ul class="nav-links">
-                <li><a href="#access">Toegang</a></li>
-                <li><a href="#services">Diensten</a></li>
-                <li><a href="#modules">Modules</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a onclick="scrollToSection('home')">Home</a></li>
+                <li><a onclick="scrollToSection('diensten')">Diensten</a></li>
+                <li><a onclick="scrollToSection('over')">Over</a></li>
+                <li><a onclick="scrollToSection('modules')">Modules</a></li>
+                <li><a onclick="scrollToSection('contact')">Contact</a></li>
+                <li><a class="premium-access-btn" onclick="showPremiumAccess()">⬢ Toegang</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Access Gate -->
-    <section class="access-gate" id="accessGate">
-        <div class="container">
-            <div class="access-content">
-                <h1 class="access-title">Strategic Business Intelligence</h1>
-                <p class="access-subtitle">Propriëtaire Methodologieën voor Concurrentievoordeel</p>
-                <p style="opacity: 0.8; margin-bottom: 2rem;">Exclusieve Toegang · Vertrouwelijke Inzichten · Strategische Transformatie</p>
-                
-                <div class="access-form-container">
-                    <div class="lock-icon">🔐</div>
-                    <h2>Toegang tot Vertrouwelijke Business Intelligence</h2>
-                    <p style="margin: 20px 0; opacity: 0.9;">Deze methodologieën zijn ontwikkeld door 30 jaar ervaring met Fortune 500 bedrijven en bevatten gevoelige strategische inzichten.</p>
-                    
-                    <form class="access-form" id="accessForm">
-                        <div class="form-group">
-                            <label for="name">Volledige Naam</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="company">Bedrijfsnaam</label>
-                            <input type="text" id="company" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Adres</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="accessCode">Toegangscode</label>
-                            <input type="password" id="accessCode" placeholder="Ontvangen tijdens intake gesprek" required>
-                        </div>
-                        <button type="submit" class="access-btn">Toegang Aanvragen</button>
-                        <div class="error" id="error">Ongeldige toegangscode. Neem contact op voor een intake gesprek.</div>
-                    </form>
-
-                    <div class="nda-notice">
-                        <h4>⚖️ Vertrouwelijkheidsverklaring Vereist</h4>
-                        <p>Toegang tot deze methodologieën vereist ondertekening van een NDA vanwege de strategische waarde en concurrentiegevoeligheid van de inzichten.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Content - Hidden until access granted -->
-    <div class="main-content" id="mainContent">
-        <!-- Hero Section -->
+    <!-- PUBLIC WEBSITE CONTENT -->
+    <div class="public-content" id="publicContent">
+        <!-- Hero Section / Home -->
         <section class="hero" id="home">
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-main">
                         <div class="hero-left">
-                            <h1 class="hero-title">Strategic Business Intelligence Advisor</h1>
-                            <p class="hero-tagline">Van AI Consultant naar Strategic Expert</p>
+                            <h1 class="hero-title">AIColLabs</h1>
+                            <div class="hero-tagline">Samen Innoveren, Samen Transformeren</div>
                             
-                            <div class="personal-intro">
-                                <p>"30 jaar business DNA - van IKEA tot AI-innovatie. Ik zie jouw kansen waar anderen problemen zien."</p>
+                            <div class="ai-gap-theme">
+                                <h3>Closing the AI Gap</h3>
+                                <p>Voor ieder business model. Van traditionele bedrijven naar AI-gedreven groei. Samen overbruggen we de kloof tussen waar je bent en waar je wilt zijn.</p>
                             </div>
-                            
-                            <p class="hero-subtitle">Toegang verleend tot propriëtaire methodologieën die traditionele consulting transformeren naar data-driven strategic advisory met 3-5x hogere waardering. Geen consultancy theater - échte transformatie die werkt.</p>
-                        </div>
-                        
-                        <div class="hero-right">
+
                             <div class="hexagon-container">
-                                <div class="hexagon" onclick="scrollToSection('ai-scan')">
+                                <div class="hexagon" onclick="scrollToSection('diensten')">
                                     <div class="hexagon-shape">
                                         <div class="hexagon-icon scan"></div>
                                         <div class="hexagon-title">AI Opportunity Scan</div>
                                     </div>
                                 </div>
                                 
-                                <div class="hexagon" onclick="scrollToSection('ai-connect')">
+                                <div class="hexagon" onclick="scrollToSection('diensten')">
                                     <div class="hexagon-shape">
                                         <div class="hexagon-icon connect"></div>
                                         <div class="hexagon-title">Partnership Matching</div>
                                     </div>
                                 </div>
                                 
-                                <div class="hexagon" onclick="scrollToSection('ai-collaborate')">
+                                <div class="hexagon" onclick="scrollToSection('diensten')">
                                     <div class="hexagon-shape">
                                         <div class="hexagon-icon collaborate"></div>
                                         <div class="hexagon-title">Implementation Success</div>
                                     </div>
                                 </div>
                             </div>
+                            
+                            <div class="personal-intro">
+                                <p>"30 jaar business DNA - van IKEA tot AI-innovatie. Ik zie jouw kansen waar anderen problemen zien."</p>
+                            </div>
+                            
+                            <p class="hero-subtitle">Jouw brug tussen traditioneel zakendoen en AI-innovatie. Met 30 jaar ervaring in retail, telecom, zorg, finance en tech zie ik jullie kansen voor meer omzet en kosten besparing waar anderen alleen problemen zien. Wij voorkomen big tech dominantie door gevestigde bedrijven te verbinden met opkomende AI-wizards.</p>
+                        </div>
+                        
+                        <div class="hero-right">
+                            <!-- Content moved to left side -->
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Value Proposition -->
-        <section class="proposition">
-            <div class="container">
-                <h2>Waarom MKB Bedrijven Kiezen voor Strategic Business Intelligence</h2>
-                
-                <div class="value-grid">
-                    <div class="value-card">
-                        <h3>🎯 Data-Driven Besluitvorming</h3>
-                        <p>Transformeer intuïtieve beslissingen naar bewezen strategieën gebaseerd op concrete business intelligence en marktanalyse.</p>
-                    </div>
-                    <div class="value-card">
-                        <h3>📈 Concurrentievoordeel</h3>
-                        <p>Ontdek verborgen kansen in uw markt door geavanceerde concurrentieanalyse en strategische positionering.</p>
-                    </div>
-                    <div class="value-card">
-                        <h3>💰 ROI Optimalisatie</h3>
-                        <p>Identificeer de hoogst renderende investeringen en elimineer verspilling door precisie business intelligence.</p>
-                    </div>
-                    <div class="value-card">
-                        <h3>🚀 Schaalbare Groei</h3>
-                        <p>Bouw systematische groeistrategie gebaseerd op voorspellende analyses en marktintelligentie.</p>
-                    </div>
-                </div>
-
-                <div class="results-showcase">
-                    <h3>Gemiddelde Resultaten Binnen 90 Dagen</h3>
-                    <div class="results-grid">
-                        <div class="result-item">
-                            <span class="result-number">+34%</span>
-                            <div class="result-label">Revenue Growth</div>
-                        </div>
-                        <div class="result-item">
-                            <span class="result-number">+67%</span>
-                            <div class="result-label">Operational Efficiency</div>
-                        </div>
-                        <div class="result-item">
-                            <span class="result-number">-23%</span>
-                            <div class="result-label">Cost Reduction</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section class="services-section" id="services">
+        <!-- Diensten Section -->
+        <section class="services-section" id="diensten">
             <div class="container">
                 <h2 class="section-title">Onze Drie-Brug Strategie</h2>
                 <p class="section-subtitle">Drie concrete stappen om van AI-angst naar AI-voordeel te gaan</p>
@@ -1088,7 +1110,7 @@
                     <div class="service-card" id="ai-scan">
                         <h3>
                             <div class="service-card-icon scan"></div>
-                            AI Scan
+                            AI Opportunity Scan
                         </h3>
                         <p>Ik analyseer jouw organisatie met mijn 30 jaar ervaring. Waar zitten de echte kansen? Welke processen vreten tijd en geld? Samen maken we een roadmap die werkt.</p>
                         <ul class="service-features">
@@ -1103,7 +1125,7 @@
                     <div class="service-card" id="ai-connect">
                         <h3>
                             <div class="service-card-icon connect"></div>
-                            AI Wizard Verbinding
+                            Partnership Matching
                         </h3>
                         <p>Ik verbind je met AI-specialisten die ik persoonlijk ken en vertrouw. Geen cowboys, maar echte experts die jouw industrie begrijpen en resultaat leveren.</p>
                         <ul class="service-features">
@@ -1118,7 +1140,7 @@
                     <div class="service-card" id="ai-collaborate">
                         <h3>
                             <div class="service-card-icon collaborate"></div>
-                            AI Samenwerking
+                            Implementation Success
                         </h3>
                         <p>Ik blijf erbij tijdens de implementatie. Als bruggenbouwer zorg ik ervoor dat jouw team en de AI-wizard elkaar verstaan en samen succesvol zijn.</p>
                         <ul class="service-features">
@@ -1133,164 +1155,307 @@
             </div>
         </section>
 
+        <!-- Over/Timeline Section -->
+        <section class="about-section" id="over">
+            <div class="container">
+                <h2 class="section-title">30 Jaar in Jouw Schoenen</h2>
+                <p class="section-subtitle">Van IKEA tot AI-innovatie - Ik zie jullie kansen waar anderen alleen problemen zien</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="year-marker">1995</div>
+                        <div class="timeline-content">
+                            <h3>Retail Foundation</h3>
+                            <span class="company">IKEA Nederland</span>
+                            <p>Begonnen met inventory optimalisatie en customer flow analyse. Hier leerde ik het belang van data-driven decisions in retail operations.</p>
+                            <ul class="achievements">
+                                <li>Omzet per m² optimalisatie</li>
+                                <li>Supply chain efficiency programma's</li>
+                                <li>Customer journey mapping</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year-marker">2000</div>
+                        <div class="timeline-content">
+                            <h3>Fashion Retail</h3>
+                            <span class="company">Mango</span>
+                            <p>Seizoen forecasting en markdown reductie strategieën. Eerste ervaring met predictive analytics in fashion retail.</p>
+                            <ul class="achievements">
+                                <li>Seizoensvoorspelling algoritmes</li>
+                                <li>Markdown optimalisatie -25%</li>
+                                <li>Trend analysis frameworks</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year-marker">2005</div>
+                        <div class="timeline-content">
+                            <h3>Telecom Transformation</h3>
+                            <span class="company">Ziggo/Vodafone</span>
+                            <p>Customer acquisition cost optimalisatie en churn prevention tijdens de grote telecom consolidatie. Ervaring met big data analytics.</p>
+                            <ul class="achievements">
+                                <li>Customer acquisition cost -40%</li>
+                                <li>Churn prediction modellen</li>
+                                <li>4G network rollout strategy</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year-marker">2010</div>
+                        <div class="timeline-content">
+                            <h3>Healthcare Innovation</h3>
+                            <span class="company">HagaZiekenhuis</span>
+                            <p>Post-fusie harmonisatie en digitalisering van healthcare processen. Compliance met IGJ regelgeving en efficiency optimization.</p>
+                            <ul class="achievements">
+                                <li>Administratiekosten -30%</li>
+                                <li>Patient flow efficiency +25%</li>
+                                <li>IGJ compliance automation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year-marker">2015</div>
+                        <div class="timeline-content">
+                            <h3>Financial Services</h3>
+                            <span class="company">Nederlandse Vereniging van Banken</span>
+                            <p>Diversity & Inclusion programma ontwikkeling en risicomanagement optimalisatie. Regulatory compliance automation.</p>
+                            <ul class="achievements">
+                                <li>D&I strategie implementatie</li>
+                                <li>Risk assessment automation</li>
+                                <li>Regulatory reporting efficiency</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year-marker">2020</div>
+                        <div class="timeline-content">
+                            <h3>AI & Tech Innovation</h3>
+                            <span class="company">Multiple Tech Companies</span>
+                            <p>Transitie naar AI en machine learning projecten. Van Annexum's predictive maintenance tot BouWatch's production optimization.</p>
+                            <ul class="achievements">
+                                <li>Azure ML implementaties</li>
+                                <li>Predictive maintenance systemen</li>
+                                <li>AI-driven process automation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Modules Section -->
         <section class="modules-section" id="modules">
             <div class="container">
-                <h2 class="section-title">Strategic Business Intelligence Methodologieën</h2>
-                <p class="section-subtitle">Zes propriëtaire modules voor complete business transformatie</p>
+                <h2 class="section-title">AI Transformation Modules</h2>
+                <p class="section-subtitle">Bewezen methodologieën voor elke fase van jouw AI-journey</p>
                 
                 <div class="modules-grid">
                     <div class="module-card">
                         <div class="module-number">Module 1</div>
-                        <h3>Competitive Intelligence Framework</h3>
-                        <p>Geavanceerde technieken voor het analyseren van concurrenten, marktposities en strategische kansen.</p>
+                        <h3>AI Readiness Assessment</h3>
+                        <p>Complete analyse van jouw organisatie's AI-gereedheid en transformatiepotentieel.</p>
                         <ul class="module-highlights">
-                            <li>Propriëtaire SWOT+ analysemodel</li>
-                            <li>Competitor benchmarking dashboard</li>
-                            <li>Market gap identification tools</li>
-                            <li>Strategic positioning matrix</li>
-                            <li>Competitive threat assessment</li>
+                            <li>Technology infrastructure audit</li>
+                            <li>Data maturity assessment</li>
+                            <li>Organizational change readiness</li>
+                            <li>ROI opportunity mapping</li>
+                            <li>Risk & compliance evaluation</li>
                         </ul>
                     </div>
 
                     <div class="module-card">
                         <div class="module-number">Module 2</div>
-                        <h3>Revenue Optimization Analytics</h3>
-                        <p>Data-driven strategieën voor het maximaliseren van omzet door klantgedrag analyse en pricing intelligence.</p>
+                        <h3>Strategic AI Roadmap</h3>
+                        <p>Stap-voor-stap implementatieplan aangepast aan jouw specifieke business model en doelen.</p>
                         <ul class="module-highlights">
-                            <li>Customer lifetime value modelling</li>
-                            <li>Dynamic pricing algorithms</li>
-                            <li>Revenue stream diversification</li>
-                            <li>Churn prediction & prevention</li>
-                            <li>Upselling opportunity mapping</li>
+                            <li>Prioritized use case identification</li>
+                            <li>Timeline & milestone planning</li>
+                            <li>Resource allocation strategy</li>
+                            <li>Budget & investment planning</li>
+                            <li>Success metrics definition</li>
                         </ul>
                     </div>
 
                     <div class="module-card">
                         <div class="module-number">Module 3</div>
-                        <h3>Operational Excellence Intelligence</h3>
-                        <p>Systematische benadering voor het identificeren en elimineren van inefficiënties in bedrijfsprocessen.</p>
+                        <h3>Partner Matching & Selection</h3>
+                        <p>Verbinding met de juiste AI-specialisten die jouw industrie en uitdagingen begrijpen.</p>
                         <ul class="module-highlights">
-                            <li>Process automation readiness assessment</li>
-                            <li>Cost-benefit optimization matrix</li>
-                            <li>Resource allocation intelligence</li>
-                            <li>Performance KPI frameworks</li>
-                            <li>Bottleneck identification system</li>
+                            <li>Sector-specific expert matching</li>
+                            <li>Technical capability assessment</li>
+                            <li>Cultural fit evaluation</li>
+                            <li>Reference & track record review</li>
+                            <li>Contract & SLA negotiation</li>
                         </ul>
                     </div>
 
                     <div class="module-card">
                         <div class="module-number">Module 4</div>
-                        <h3>Market Expansion Strategy</h3>
-                        <p>Bewezen methodologieën voor het identificeren en succesvol betreden van nieuwe markten en segmenten.</p>
+                        <h3>Implementation Management</h3>
+                        <p>Hands-on projectmanagement en continue monitoring tijdens de AI-implementatie fase.</p>
                         <ul class="module-highlights">
-                            <li>Market opportunity scoring model</li>
-                            <li>Go-to-market strategy templates</li>
-                            <li>Risk assessment frameworks</li>
-                            <li>Investment prioritization matrix</li>
-                            <li>Timeline & milestone planning</li>
+                            <li>Agile project management</li>
+                            <li>Quality assurance protocols</li>
+                            <li>Risk mitigation strategies</li>
+                            <li>Stakeholder communication</li>
+                            <li>Change management support</li>
                         </ul>
                     </div>
 
                     <div class="module-card">
                         <div class="module-number">Module 5</div>
-                        <h3>Predictive Business Analytics</h3>
-                        <p>Voorspellende modellen en trend analyses voor strategische planning en risicomanagement.</p>
+                        <h3>Performance Optimization</h3>
+                        <p>Continue verbetering en optimalisatie van AI-systemen voor maximale business impact.</p>
                         <ul class="module-highlights">
-                            <li>Demand forecasting algorithms</li>
-                            <li>Market trend prediction models</li>
-                            <li>Financial scenario planning</li>
-                            <li>Risk probability matrices</li>
-                            <li>Strategic decision trees</li>
+                            <li>Performance monitoring dashboards</li>
+                            <li>Model accuracy optimization</li>
+                            <li>Cost efficiency analysis</li>
+                            <li>Scaling & expansion planning</li>
+                            <li>ROI measurement & reporting</li>
                         </ul>
                     </div>
 
                     <div class="module-card">
                         <div class="module-number">Module 6</div>
-                        <h3>Digital Transformation Intelligence</h3>
-                        <p>Strategische roadmap voor het succesvol implementeren van digitale transformatie initiatieven.</p>
+                        <h3>Long-term AI Strategy</h3>
+                        <p>Strategische planning voor toekomstige AI-innovaties en concurrentievoordeel behoud.</p>
                         <ul class="module-highlights">
-                            <li>Digital readiness assessment</li>
-                            <li>Technology ROI calculators</li>
-                            <li>Change management frameworks</li>
-                            <li>Implementation risk mitigation</li>
-                            <li>Performance monitoring systems</li>
+                            <li>Technology trend analysis</li>
+                            <li>Competitive advantage strategies</li>
+                            <li>Innovation pipeline development</li>
+                            <li>Team capability building</li>
+                            <li>Partnership ecosystem growth</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section class="experience-section">
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
             <div class="container">
-                <h2 class="section-title">30 Jaar in Jouw Schoenen</h2>
-                <p class="section-subtitle">Ik zie jullie kansen voor meer omzet en lagere kosten waar anderen alleen problemen zien</p>
+                <h2>Klaar om Jouw AI-Toekomst te Bepalen?</h2>
+                <p>Laat big tech niet jouw AI-bestemming bepalen. Start vandaag met een persoonlijk gesprek over jouw AI-mogelijkheden.</p>
                 
-                <div class="experience-grid">
-                    <div class="sector-experience">
-                        <h4>🛍️ Retail & E-commerce</h4>
-                        <p><strong>IKEA (4 jaar)</strong> - Inventory optimalisatie, omzet per m²<br>
-                        <strong>Mango (1 jaar)</strong> - Seizoen forecasting, markdowns reductie<br>
-                        <strong>Franchise & papa-mama winkels</strong> - Cash flow, personeelskosten</p>
-                    </div>
+                <div style="margin-top: 40px;">
+                    <a href="mailto:info@aicolllabs.nl?subject=AI Transformatie Gesprek" class="contact-btn">▶ Start Gesprek</a>
+                    <a href="tel:+31612345678" class="contact-btn">▲ Bel Direct</a>
+                    <a href="https://linkedin.com/in/elhemguernina" target="_blank" class="contact-btn">◆ LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PREMIUM PORTAL - Hidden by default -->
+    <div class="premium-portal" id="premiumPortal">
+        <!-- Access Gate -->
+        <section class="access-gate" id="accessGate">
+            <div class="container">
+                <div class="access-content">
+                    <h1 class="access-title">Strategic Business Intelligence</h1>
+                    <p class="access-subtitle">Propriëtaire Methodologieën voor Concurrentievoordeel</p>
+                    <p style="opacity: 0.8; margin-bottom: 2rem;">Exclusieve Toegang · Vertrouwelijke Inzichten · Strategische Transformatie</p>
                     
-                    <div class="sector-experience">
-                        <h4>📱 Telecom & Technology</h4>
-                        <p><strong>Ziggo/Vodafone</strong> - Customer acquisition cost, churn reductie<br>
-                        <strong>Colourbox/Skyfish</strong> - SaaS metrics, retention verhogen<br>
-                        <strong>B2B & B2C</strong> - Sales cycle verkorten, conversion verhogen</p>
-                    </div>
-                    
-                    <div class="sector-experience">
-                        <h4>🏥 Zorg & Publieke Sector</h4>
-                        <p><strong>HagaZiekenhuis</strong> - Administratiekosten -30%, efficiency +25%<br>
-                        <strong>Gemeente Ede</strong> - Proceskosten reductie, service verbetering<br>
-                        <strong>Compliance & regelgeving</strong> - Boetes voorkomen, audit kosten</p>
-                    </div>
-                    
-                    <div class="sector-experience">
-                        <h4>💰 Finance & Banking</h4>
-                        <p><strong>Nederlandse Vereniging van Banken</strong> - Risk reduction, compliance<br>
-                        <strong>Robin Energie</strong> - Operational excellence, customer lifetime value<br>
-                        <strong>Compliance & risicomanagement</strong> - Penalty prevention</p>
-                    </div>
-                    
-                    <div class="sector-experience">
-                        <h4>🏭 Vastgoed & Energie</h4>
-                        <p><strong>Annexum Vastgoed</strong> - Predictive maintenance, asset performance<br>
-                        <strong>Robin Energie</strong> - Smart meter ROI, operational costs<br>
-                        <strong>Data-driven asset management</strong> - Revenue optimization</p>
-                    </div>
-                    
-                    <div class="sector-experience">
-                        <h4>⚙️ Manufacturing & Productie</h4>
-                        <p><strong>BouWatch EU</strong> - Production efficiency, quality costs<br>
-                        <strong>Supply chain digitalisering</strong> - Waste reduction<br>
-                        <strong>SAP S/4HANA, Outsystems</strong> - Process automation ROI</p>
+                    <div class="access-form-container">
+                        <div class="lock-icon">⬢</div>
+                        <h2>Toegang tot Vertrouwelijke Business Intelligence</h2>
+                        <p style="margin: 20px 0; opacity: 0.9;">Deze methodologieën zijn ontwikkeld door 30 jaar ervaring met Fortune 500 bedrijven en bevatten gevoelige strategische inzichten.</p>
+                        
+                        <form class="access-form" id="accessForm">
+                            <div class="form-group">
+                                <label for="name">Volledige Naam</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Bedrijfsnaam</label>
+                                <input type="text" id="company" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Adres</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="accessCode">Toegangscode</label>
+                                <input type="password" id="accessCode" placeholder="Ontvangen tijdens intake gesprek" required>
+                            </div>
+                            <button type="submit" class="access-btn">Toegang Aanvragen</button>
+                            <div class="error" id="error">Ongeldige toegangscode. Neem contact op voor een intake gesprek.</div>
+                        </form>
+
+                        <div class="nda-notice">
+                            <h4>⚖ Vertrouwelijkheidsverklaring Vereist</h4>
+                            <p>Toegang tot deze methodologieën vereist ondertekening van een NDA vanwege de strategische waarde en concurrentiegevoeligheid van de inzichten.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section" id="contact">
-            <div class="container">
-                <h2>Klaar voor Strategic Business Intelligence?</h2>
-                <p>Start met een vertrouwelijke strategische assessment van uw bedrijf</p>
-                <a href="mailto:info@aicolllabs.nl?subject=Strategic Assessment Aanvraag" class="cta-btn-large">Plan Intake Gesprek</a>
-            </div>
-        </section>
+        <!-- Premium Content - Hidden until access granted -->
+        <div class="premium-content" id="premiumContent" style="display: none;">
+            <section class="premium-welcome">
+                <div class="container">
+                    <h1>Welkom in het Strategic Business Intelligence Portal</h1>
+                    <p>Toegang verleend tot propriëtaire methodologieën, frameworks en implementatie-tools die uw bedrijf transformeren naar data-driven strategic excellence.</p>
+                </div>
+            </section>
+
+            <section class="premium-modules">
+                <div class="container">
+                    <h2 class="section-title" style="color: var(--accent-gold);">Strategic Business Intelligence Modules</h2>
+                    
+                    <div class="modules-grid">
+                        <div class="module-card" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(244, 185, 66, 0.3);">
+                            <div class="module-number">Premium Module 1</div>
+                            <h3 style="color: var(--white);">Competitive Intelligence Framework</h3>
+                            <p style="color: rgba(255, 255, 255, 0.8);">Geavanceerde technieken voor het analyseren van concurrenten, marktposities en strategische kansen.</p>
+                            <ul class="module-highlights">
+                                <li>Propriëtaire SWOT+ analysemodel</li>
+                                <li>Competitor benchmarking dashboard</li>
+                                <li>Market gap identification tools</li>
+                                <li>Strategic positioning matrix</li>
+                                <li>Competitive threat assessment</li>
+                            </ul>
+                        </div>
+                        <!-- More premium modules would be added here -->
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 AI CollLabs Strategic Business Intelligence | Alle methodologieën zijn eigendom en vallen onder geheimhoudingsverklaringen</p>
+            <p>&copy; 2025 AI CollLabs | Alle methodologieën zijn eigendom en vallen onder geheimhoudingsverklaringen</p>
         </div>
     </footer>
 
     <script>
-        // Access control functionality
+        // Navigation functions
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Show premium access portal
+        function showPremiumAccess() {
+            document.getElementById('publicContent').style.display = 'none';
+            document.getElementById('premiumPortal').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // Premium access functionality
         const validCodes = ['STRATEGIC2025', 'MKBINTEL', 'BIZADVISE', 'AICOLLLABS'];
         let accessGranted = false;
 
@@ -1313,11 +1478,8 @@
                 
                 // Grant access
                 document.getElementById('accessGate').style.display = 'none';
-                document.getElementById('mainContent').style.display = 'block';
+                document.getElementById('premiumContent').style.display = 'block';
                 accessGranted = true;
-                
-                // Scroll to content
-                document.getElementById('mainContent').scrollIntoView({ behavior: 'smooth' });
                 
                 console.log('Access granted to:', accessInfo);
                 
@@ -1329,35 +1491,7 @@
             }
         });
 
-        // Prevent direct access to content
-        document.addEventListener('DOMContentLoaded', function() {
-            if (!accessGranted) {
-                document.getElementById('mainContent').style.display = 'none';
-            }
-        });
-
-        // Basic security - prevent inspect element bypass
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-                if (!accessGranted) {
-                    e.preventDefault();
-                    alert('Toegang tot deze content is beveiligd. Gebruik de toegangscode om door te gaan.');
-                }
-            }
-        });
-
-        // Hexagon click functionality
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                element.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'center'
-                });
-            }
-        }
-
-        // Smooth scrolling for navigation
+        // Smooth scrolling for all anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1377,11 +1511,18 @@
             const scrollPosition = window.scrollY;
             
             hexagons.forEach((hexagon, index) => {
-                const rotation = scrollPosition * 0.05 * (index + 1);
-                const scale = 1 + Math.sin(scrollPosition * 0.001 + index) * 0.05;
-                hexagon.style.transform = `rotate(${rotation}deg) scale(${scale})`;
+                const rotation = scrollPosition * 0.02 * (index + 1);
+                hexagon.style.transform += ` rotate(${rotation}deg)`;
             });
         });
+
+        // Back to public site function
+        function backToPublicSite() {
+            document.getElementById('premiumPortal').style.display = 'none';
+            document.getElementById('publicContent').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
     </script>
 </body>
 </html>
+                
